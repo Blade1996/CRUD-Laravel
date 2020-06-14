@@ -7,6 +7,9 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ExampleTest extends TestCase
 {
+
+    //Creacion de test en terminal: php artisan make:test <NameTest>
+
     /**
      * A basic test example.
      *
