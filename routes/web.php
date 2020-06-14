@@ -19,18 +19,22 @@ Route::get('/usuarios', function () {
     return 'usuarios';
 });
 
-Route::get('/usuarios/nuevo', function() {
-    return "Creacion de nuevo usuario";
-});
-
 //Ruta para mostrar el detalle del usuario, con parametro dinamico, y validar que parametro sea un numero
 Route::get('/usuarios/detalles/{id}', function($id) {
     return "Mostrando detalle del usuario:{$id}";
 })->where('id', '[0-9]+');
 
 
+Route::get('/usuarios/nuevo', function() {
+    return "Creacion de nuevo usuario";
+});
+
+
 //Ruta para mostrar el detalle del usuario, con parametro dinamico, y validar que un parametro sea opcional
 Route::get('/saludo/{name}/{nickname?}', function($name, $nickname = null){
+
+    //Mostrar la Primera Letra en Mayúscula
+    $name = ucfirst($name);
 
     if ($nickname){
 
